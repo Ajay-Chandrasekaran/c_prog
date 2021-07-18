@@ -3,6 +3,11 @@
 
 /* all functions in this header expects string to end with a '\0' character */
 
+/*
+* Fucntion: get_string
+* --------------------
+* get string line into s, returns length
+*/
 int get_string(char s[], int lim) {
     int c, i;
 
