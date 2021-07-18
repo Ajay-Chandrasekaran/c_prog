@@ -1,16 +1,28 @@
 #include <stdio.h>
-#define MAX 100U
+#include "str_func.h"
+#define MAX 100
 
 int strindex(char[], char[]);
-int getln(char[], int);
+
+char pattern[] = "ould";
 
 int main() {
-    int found;
-    char line[] = "found";
-    char pattern[] = "found";
+    int found = 0;
+    char line[MAX];
 
-    printf("index: %d\n", strindex(line, pattern));
-    return 0;
+    // printf("index: %d\n", strindex(line, pattern));
+
+    // while (get_string(pattern, MAX) == 0)
+    //     ;
+    // while (get_string(line, MAX) == 0)
+    //     ;
+
+    while (get_string(line, MAX) > 0)
+        if (strindex(line, pattern) >= 0) {
+            ++found;
+            printf("%s\n", line);
+        }
+    return found;
 }
 
 int strindex(char line[], char substr[]) {
@@ -26,9 +38,4 @@ int strindex(char line[], char substr[]) {
         }
     }
     return -1;
-}
-
-int getln(char line[], int max) {
-    
-    return 0;
 }
