@@ -18,15 +18,15 @@ int main() {
     //     ;
 
     while (get_string(line, MAX) > 0)
-        if (strindex(line, pattern) >= 0) {
-            ++found;
-            printf("%s\n", line);
+        if ((found = strindex(line, pattern)) >= 0) {
+            printf("%d\n", found);
         }
     return found;
 }
 
 int strindex(char line[], char substr[]) {
     int i, j, k;
+    int found = -1;
 
     for(i=0; line[i] != '\0'; ++i) {
         for(j=i, k=0; (substr[k] != '\0') && (substr[k] == line[j]); ++j, ++k) {
@@ -34,8 +34,8 @@ int strindex(char line[], char substr[]) {
         }
 
         if ((substr[k] == '\0') && (k > 0)) {
-            return i;
+            found = i;
         }
     }
-    return -1;
+    return found;
 }
