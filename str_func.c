@@ -25,9 +25,6 @@ void print_string(char s[]) {
 * Function: squeeze
 * -----------------
 * deletes each character in str1 that matches with any character in str2
-*
-* str1: string to squeeze
-* str2: reference string
 */
 void squeeze(char str1[], char str2[]) {
     int i, j, k;
@@ -65,3 +62,22 @@ int any(char str1[], char str2[]) {
     return -1;
 }
 
+/*
+* Function: findsubstr
+* --------------------
+* returns the index of the leftmost occurrence stbstr in line, or -1 if notfound
+*/
+int findsubstr(char line[], char substr[]) {
+    int i, j, k;
+
+    for(i=0; line[i] != '\0'; ++i) {
+        for(j=i, k=0; (substr[k] != '\0') && (substr[k] == line[j]); ++j, ++k) {
+            ; // NOP
+        }
+
+        if ((substr[k] == '\0') && (k > 0)) {
+            return i;
+        }
+    }
+    return -1;
+}

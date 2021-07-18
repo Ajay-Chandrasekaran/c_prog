@@ -4,6 +4,6 @@
 int get_string(char s[], int lim);
 void print_string(char s[]);
 void squeeze(char str1[], char str2[]); 
+int findsubstr(char line[], char substr[]);
 
 #endif
-
