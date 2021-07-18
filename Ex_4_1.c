@@ -10,13 +10,6 @@ int main() {
     int found = 0;
     char line[MAX];
 
-    // printf("index: %d\n", strindex(line, pattern));
-
-    // while (get_string(pattern, MAX) == 0)
-    //     ;
-    // while (get_string(line, MAX) == 0)
-    //     ;
-
     while (get_string(line, MAX) > 0)
         if ((found = strindex(line, pattern)) >= 0) {
             printf("%d\n", found);
